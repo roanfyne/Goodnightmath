@@ -786,6 +786,14 @@ async function listZones() {
         const json = await response.json();
         zones = json;
         zones[0].featured = true; // always gonna be the discord
+        zones.push({
+  id: 99999,
+  name: "GeForce NOW",
+  url: "https://geforcenow.com/mall",
+  author: "GeForce",
+  cover: "https://geforcenow.com/favicon.ico",
+  description: "Stream PC games instantly with GeForce NOW."
+});
         await fetchPopularity();
         sortZones();
         const search = new URLSearchParams(window.location.search);
